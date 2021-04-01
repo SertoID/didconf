@@ -74,6 +74,9 @@ typings/
 # dotenv environment variables file
 gateway_keystore.env
 gateway_pub_jwk.env
+.env
+.env.test
+.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -111,9 +114,6 @@ dist
 
 # build files
 build
-
-# local environment files
-.env.local
 
 .idea/
 .vs/
