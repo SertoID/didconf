@@ -1,3 +1,6 @@
+# docker.env
+data/
+
 # Logs
 logs
 *.log
@@ -69,8 +72,11 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
+gateway_keystore.env
+gateway_pub_jwk.env
 .env
 .env.test
+.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -102,3 +108,16 @@ dist
 
 # TernJS port file
 .tern-port
+
+*.sqlite
+*.sqlite-journal
+
+# build files
+build
+
+.idea/
+.vs/
+.project
+.scratchpad
+
+did-configuration.json
