@@ -2,13 +2,13 @@
   "name": "didconf",
   "version": "1.0.0",
   "description": "didconf - EXPERIMENTAL Command line tool to generate a .well-known DID configuration for a domain",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com:SertoID/didconf.git"
-  },
+  "repository": "git@github.com:SertoID/didconf.git",
   "main": "build/app.js",
   "license": "MIT",
   "author": "Italo Borssatto <italo.borssatto@mesh.xyz>",
+  "bin": {
+    "didconf": "bin/didconf.js"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node ./build/app.js",
