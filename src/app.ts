@@ -27,9 +27,9 @@ const privateKey: string = argv.privateKey;
 
 createDidConfig(domain, privateKey).then(
     didConfiguration => {
-        console.log(`DID: ${colors.bold.green(didConfiguration.identifier.did)}`);
-        console.log(`Private key: ${colors.bold.red(didConfiguration.privateKey)}`);
-        console.log(".well-known DID Configuration URL: " + colors.bold.green("https://" + domain + "/.well-known/did-configuration.json"));
+        console.log(`DID:                   ${colors.bold.green(didConfiguration.identifier.did)}`);
+        console.log(`Private key:           ${colors.bold.red(didConfiguration.privateKey)}`);
+        console.log("DID Configuration URL: " + colors.bold.green("https://" + domain + "/.well-known/did-configuration.json"));
 
         const wkDidConfigContent = JSON.stringify(didConfiguration.didConfiguration, null, 4);
         console.log("DID Configuration file \"did-configuration.json\":\n" + colors.bold.gray(wkDidConfigContent));
