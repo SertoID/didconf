@@ -1,0 +1,33 @@
+{
+  "name": "didconf",
+  "version": "1.0.0",
+  "description": "didconf - EXPERIMENTAL Command line tool to generate a .well-known DID configuration for a domain",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:SertoID/didconf.git"
+  },
+  "main": "build/app.js",
+  "license": "MIT",
+  "author": "Italo Borssatto <italo.borssatto@mesh.xyz>",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./build/app.js",
+    "dev": "ts-node ./src/app.ts"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "elliptic": "6.5.4",
+    "ethr-did-resolver": "3.0.2",
+    "js-sha3": "^0.8.0",
+    "sqlite3": "^5.0.0",
+    "typeorm": "0.2.31",
+    "veramo-plugin-did-config": "1.0.6",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "jest": "^25.4.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}
