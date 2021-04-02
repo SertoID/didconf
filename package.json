@@ -1,6 +1,6 @@
 {
   "name": "didconf",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CLI to generate a .well-known DID configuration",
   "repository": "git@github.com:SertoID/didconf.git",
   "main": "build/app.js",
