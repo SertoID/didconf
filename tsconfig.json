@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "strict": true,
+    "baseUrl": ".",
     "outDir": "./build",
-    "rootDir": "src",
+    "rootDir": "./src",
     "preserveConstEnums": true,
     "sourceMap": true,
     "target": "es6",

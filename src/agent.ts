@@ -19,9 +19,9 @@ import { DIDConfigurationPlugin, IWellKnownDidConfigurationPlugin } from 'veramo
 
 // @see https://github.com/uport-project/veramo/blob/next/__tests__/localAgent.test.ts
 
-const databaseFile = 'local-database.sqlite'
-const infuraProjectId = '5ffc47f65c4042ce847ef66a3fa70d4c'
-const secretKey = '29739248cad1bd1a0fc4d9b75cd4d2990de535baf5caadfdf8d8f86664aa830c'
+const databaseFile = 'didconf.sqlite';
+const infuraProjectId = '5ffc47f65c4042ce847ef66a3fa70d4c';
+const secretKey = '29739248cad1bd1a0fc4d9b75cd4d2990de535baf5caadfdf8d8f86664aa830c';
 
 let dbConnection: any = createConnection({
     type: 'sqlite',

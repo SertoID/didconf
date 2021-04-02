@@ -23,7 +23,7 @@ export const createDidConfig = async (domain: string, privateKey?: string): Prom
     let identifier: IIdentifier;
     if (privateKey) {
         identifier = await agent.didManagerImport({
-            did: toEthereumAddress(key.getPublic().encode('hex')),
+            did: "did:ethr:" + toEthereumAddress(key.getPublic().encode('hex')),
             provider: "did:ethr",
             keys: [
                 {
