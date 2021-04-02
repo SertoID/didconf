@@ -6,9 +6,6 @@ const colors = require('colors');
 const yargs = require('yargs');
 const { description, version } = require('../package.json')
 
-if (process.argv.length === 2) process.argv.push('-h')
-
-
 program
     .description(description)
     .version(version, '-v, - version')
@@ -38,4 +35,5 @@ program
     })
     .helpOption('-h, --help', 'Command instructions');
 
+if (process.argv.length === 2) process.argv.push('-h')
 program.parse(process.argv);
