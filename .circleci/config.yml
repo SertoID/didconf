@@ -1,0 +1,78 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.1
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:15.1
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore yarn cache
+          key: node-modules-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install modules
+          command: yarn --frozen-lockfile install
+      - save_cache:
+          name: Save yarn cache
+          key: node-modules-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: Building services
+          command: yarn build
+          no_output_timeout: 30m
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - build
+            - src
+            - .git
+            - node_modules
+            - codecov.yml
+            - yarn.lock
+            - package.json
+            - jest.config.js
+            - tsconfig.json
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Running tests
+          command: yarn test-ci
+      - store_artifacts:
+          path: coverage
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - coverage
+            
+  codecov:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Running code coverage
+          command: yarn codecov
+
+  
+         
+
+workflows:
+  build-test-deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - codecov:
+          requires:
+            - test
